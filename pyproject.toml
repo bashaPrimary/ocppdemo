@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "ocpp-demo"
+version = "0.1"
+description = "Demo OCPP package, protocol and functionaliy"
+authors = ["bashaPrimary"]
+
+packages = [
+    { include = "ocppdemo", from="src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ocpp = "^0.17.0"
+websockets = "^10.4"
+python-dotenv = "^1.0.0"
+pydantic = "^1.10.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+black = "^22.6.0"
+mypy = "^0.981"
+pre-commit = "^2.12.1"
+flake8 = "^3.9.2"
+pytest-asyncio = "^0.15.1"
+
+[tool.black]
+line-length = 99
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

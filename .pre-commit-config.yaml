@@ -1,0 +1,26 @@
+repos:
+  - repo: local
+    hooks:
+      - id: black
+        name: Format code with Black
+        description: Reformat code to Black standards
+        entry: bin/run-black.sh
+        language: script
+        types: [python]
+        require_serial: true
+
+      - id: flake8
+        name: Check style with flake8
+        description: Checks code matches flake8 standards
+        entry: bin/run-flake8.sh
+        language: script
+        types: [python]
+        require_serial: false
+
+      - id: mypy
+        name: Check typing with MyPy
+        description: Performs static type checking using MyPy
+        entry: bin/run-mypy.sh
+        language: script
+        types: [python]
+        require_serial: false
